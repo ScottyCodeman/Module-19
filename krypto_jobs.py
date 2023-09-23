@@ -93,28 +93,28 @@ candidate_database = {
         "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0",
         "4.3",
         0.20,
-        "https://github.com/ScottyCodeman/Module-19/blob/main/Images/lane.jpeg",
+        "https://github.com/ScottyCodeman/Module-19/blob/main/Images/lane.jpeg?raw=true"
     ],
     "Ash": [
         "Ash",
         "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396",
         "5.0",
         0.33,
-        "https://github.com/ScottyCodeman/Module-19/blob/main/Images/ash.jpeg",
+        "https://github.com/ScottyCodeman/Module-19/blob/main/Images/ash.jpeg?raw=true"
     ],
     "Jo": [
         "Jo",
         "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45",
         "4.7",
         0.19,
-        "https://github.com/ScottyCodeman/Module-19/blob/main/Images/jo.jpeg",
+        "https://github.com/ScottyCodeman/Module-19/blob/main/Images/jo.jpeg?raw=true"
     ],
     "Kendall": [
         "Kendall",
         "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45",
         "4.1",
         0.16,
-        "https://github.com/ScottyCodeman/Module-19/blob/main/Images/kendall.jpeg",
+        "https://github.com/ScottyCodeman/Module-19/blob/main/Images/kendall.jpeg?raw=true"
     ],
 }
 
@@ -127,7 +127,7 @@ def get_people():
     db_list = list(candidate_database.values())
 
     for number in range(len(people)):
-        st.image(db_list[number][4], width=200)
+        st.image(db_list[number][4], width=200, caption=db_list[number][0])
         st.write("Name: ", db_list[number][0])
         st.write("Ethereum Account Address: ", db_list[number][1])
         st.write("KryptoJobs2Go Rating: ", db_list[number][2])
@@ -175,7 +175,7 @@ st.sidebar.write(account.address)
 ether = get_balance(w3, account.address)
 st.sidebar.text("Your Ether Balance")
 st.sidebar.text(ether)
-sit.sidebar.text("-----------------")
+st.sidebar.text("-----------------")
 
 ##########################################
 
@@ -266,11 +266,13 @@ st.sidebar.markdown("## Total Wage in Ether")
 # Calculate total `wage` for the candidate by multiplying the candidate’s hourly
 # rate from the candidate database (`candidate_database[person][3]`) by the
 # value of the `hours` variable
-# YOUR CODE HERE
+wage = candidate_database[person][3] * hours
 
 # @TODO
 # Write the `wage` calculation to the Streamlit sidebar
-# YOUR CODE HERE
+st.sidebar.text("Candidates hourly wage")
+st.sidebar.text(wage)
+st.sidebar.text("----------------------")
 
 ##########################################
 # Step 2 - Part 2:
@@ -297,7 +299,7 @@ if st.sidebar.button("Send Transaction"):
     # Call the `send_transaction` function and pass it 3 parameters:
     # Your `account`, the `candidate_address`, and the `wage` as parameters
     # Save the returned transaction hash as a variable named `transaction_hash`
-    # YOUR CODE HERE
+    transaction_hash = send_transaction(w3, account, candidate_address, wage)
 
     # Markdown for the transaction hash
     st.sidebar.markdown("#### Validated Transaction Hash")
