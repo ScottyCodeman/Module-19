@@ -80,7 +80,7 @@ w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
 # @TODO:
 # From `crypto_wallet.py import the functions generate_account, get_balance,
 #  and send_transaction
-# YOUR CODE HERE
+from crypto_wallet import generate_account, get_balance, send_transaction
 
 ################################################################################
 # KryptoJobs2Go Candidate Information
@@ -93,28 +93,28 @@ candidate_database = {
         "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0",
         "4.3",
         0.20,
-        "Images/lane.jpeg",
+        "https://github.com/ScottyCodeman/Module-19/blob/main/Images/lane.jpeg",
     ],
     "Ash": [
         "Ash",
         "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396",
         "5.0",
         0.33,
-        "Images/ash.jpeg",
+        "https://github.com/ScottyCodeman/Module-19/blob/main/Images/ash.jpeg",
     ],
     "Jo": [
         "Jo",
         "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45",
         "4.7",
         0.19,
-        "Images/jo.jpeg",
+        "https://github.com/ScottyCodeman/Module-19/blob/main/Images/jo.jpeg",
     ],
     "Kendall": [
         "Kendall",
         "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45",
         "4.1",
         0.16,
-        "Images/kendall.jpeg",
+        "https://github.com/ScottyCodeman/Module-19/blob/main/Images/kendall.jpeg",
     ],
 }
 
@@ -156,7 +156,7 @@ st.sidebar.markdown("## Client Account Address and Ethernet Balance in Ether")
 
 # @TODO:
 #  Call the `generate_account` function and save it as the variable `account`
-# YOUR CODE HERE
+account = generate_account()
 
 ##########################################
 
@@ -172,7 +172,10 @@ st.sidebar.write(account.address)
 # @TODO
 # Call `get_balance` function and pass it your account address
 # Write the returned ether balance to the sidebar
-# YOUR CODE HERE
+ether = get_balance(w3, account.address)
+st.sidebar.text("Your Ether Balance")
+st.sidebar.text(ether)
+sit.sidebar.text("-----------------")
 
 ##########################################
 
