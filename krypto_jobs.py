@@ -90,7 +90,7 @@ from crypto_wallet import generate_account, get_balance, send_transaction
 candidate_database = {
     "Lane": [
         "Lane",
-        "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0",
+        "0x72eD1DB3c576f0385E157b3F7820929D77146A6c",
         "4.3",
         0.20,
         "https://github.com/ScottyCodeman/Module-19/blob/main/Images/lane.jpeg?raw=true"
@@ -104,14 +104,14 @@ candidate_database = {
     ],
     "Jo": [
         "Jo",
-        "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45",
+        "0x0bAB93CD8Fb515982793050Cf1DFa312977C880f",
         "4.7",
         0.19,
         "https://github.com/ScottyCodeman/Module-19/blob/main/Images/jo.jpeg?raw=true"
     ],
     "Kendall": [
         "Kendall",
-        "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45",
+        "0x12635B664Aab38B2C441A68D847c501C58aA1FE2",
         "4.1",
         0.16,
         "https://github.com/ScottyCodeman/Module-19/blob/main/Images/kendall.jpeg?raw=true"
