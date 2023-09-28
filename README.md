@@ -17,5 +17,8 @@
 * Launched `Streamlit` and recorded the process of the application in process
   ![gif](Images/streamlit-krypto_jobs-2023-09-25-21-09-52.gif)
 
+### a screenshot of the transaction
+![transaction](Images/transaction.png)
+
 
 ## Thank you this was my submission for assignment 19
